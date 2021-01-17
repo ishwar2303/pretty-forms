@@ -1,0 +1,202 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0px 10px;
+    max-width: 100%;
+}
+
+.code-wrapper{
+    width: 800px;
+}
+.code-wrapper > h4{
+    padding: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background: #dbe6f0;
+    border : 0.5px solid#bdc3c7;
+    font-size: 17px;
+    border-bottom: none;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    color: #e74c3c;
+
+}
+.code-wrapper > h4 > i{
+    margin-right: 5px;
+}
+
+.code-wrapper > h5{
+    padding: 5px;
+    background: #dbe6f0;
+    border-left : 0.5px solid #bdc3c7;
+    border-right : 0.5px solid #bdc3c7;
+    font-size: 16px;
+    border-bottom: none;
+    display: flex;
+    flex-direction: column;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+}
+.code-wrapper > h5 > div:nth-child(1){
+    display: flex;
+    justify-content: flex-start;
+    color: #273c75;
+    font-size: 17px;
+    align-items: center;
+    justify-content: space-between;
+}
+.code-wrapper-output{
+    padding: 0px 10px;
+    background: white;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    margin-top: -21px;
+    border-radius: 5px;
+    border: 0.5px solid #ccc;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.code-wrapper-output > .msg{
+    margin-bottom: 10px;
+    font-weight: 400;
+    color: #0a3d62;
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    flex-direction: column;
+}
+.
+.code-wrapper-output > .msg > label{
+    display: flex;
+}
+
+.code-wrapper-output > .msg > label > i{
+    margin-right: 5px;
+}
+
+.code-wrapper-output > .msg > label > span{
+
+}
+.rainbow-show{
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    overflow-x: auto;
+    padding: 0px 10px;
+}
+pre{
+    line-height: 0;
+    max-width: 100%;
+    border : 0px solid;
+}
+.page-heading{
+    width: 800px;
+    font-size: 34px;
+    font-weight: 600;
+    font-family: monospace;
+    color: #f1c40f;
+    padding: 5px 0px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+@media screen and (max-width : 800px){
+    .page-heading{
+        width: 100%;
+    }
+    .code-wrapper{
+        padding: 0px 5px;
+        width: 100%;
+    }
+    .rainbow-show{
+    }
+    .code-wrapper > h5 > div:nth-child(1){
+        font-size: 16px;
+    }
+}
+
+.overlay-for-load{
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    top : 0;
+    position: fixed;
+    width: 100%;
+    background: white;
+    height: 100vh;
+}
+
+.overlay-for-load > div{
+    display: flex;
+    z-index: 2;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background: rgba(0,0,255,0.2);
+    flex-direction: column;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.overlay-for-load > div > h1{
+    color: #e74c3c;
+    margin-bottom: 15px;
+}
+.overlay-for-load > div > h3{
+    margin-bottom: 15px;
+}
+.overlay-for-load > div > i{
+    font-size: 25px;
+    color: #3498db;
+}
+.copy-btn-container{
+    position: relative;
+}
+.copy-to-clipboard-btn{
+    border-radius: 5px;
+    padding: 7px 10px;
+    border: 0.5px solid #bdc3c7;
+    background: #ff5252;
+    color: white;
+    width: 80px;
+    font-size: 16px;
+}
+.copy-to-clipboard-message{
+    position: absolute;
+    right: 0px;
+    top: 39px;
+    z-index: 3;
+    color: white;
+    padding: 5px 10px;
+    background: rgba(0,0,0,0.6);
+    border-radius: 5px;
+    width: 145px;
+    font-size: 14px;
+    text-align: center;
+}
+#css-link-copied-msg{
+    display: none;
+}
+#script-link-copied-msg{
+    display: none;
+}
+#html-code-copied-msg{
+    display: none;
+}
+#html-code-to-copy{
+    display: none;
+}
+.child-box{
+    border : 0.5px solid ;
+    padding: 10px;
+    border-radius: 5px;
+    background: #3498db;
+    color: white;
+}

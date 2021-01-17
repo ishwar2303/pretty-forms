@@ -1,51 +1,3 @@
-<html>
-    <head>
-        <title>Custom Form</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="assets/css/header.css">
-        <link rel="stylesheet" href="assets/css/footer.css">
-        <link rel="stylesheet" href="assets/css/code-wrap.css">
-        <link rel="stylesheet" type="text/css" href="rainbow/themes/css/github.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    </head>
-    <body>
-        <div id="header-container">
-        </div>
-        <script>
-            $('#header-container').load('includes/header.html')
-        </script>
-        <div class="wrapper">
-            <div class="overlay-for-load">
-                <div>
-                    <h1>Pretty Forms</h1>
-                    <h3>Preparing...</h3>
-                    <i class="fa fa-refresh fa-spin"></i>
-                </div>
-            </div>
-
-            <script>
-                setTimeout(() => {
-                    document.getElementsByClassName('overlay-for-load')[0].style.display = 'none'
-                }, 1500)
-            </script>
-            <div class="page-heading">
-                Form validation code...
-            </div>
-            <!-- form javascript code -->
-            <div class="code-wrapper">
-                <h4>
-                    <i class="fa fa-dot-circle-o"></i>
-                    <span>JavaScript</span>
-                </h4>
-                <h5>
-                    <div>
-                    <span>Form validation code</span>
-                    </div>
-                </h5>
-                <pre>
-                    <code data-language='javascript'>
-<script>
 /*
 Setup
 Normal form inputs with type = text,email,password and textarea fields are accessed using class="form-input" for validation (see line: 35)
@@ -313,18 +265,3 @@ function agreeToPolicy(){
         return true
     }
 }
-</script>
-                    </code>
-                </pre>
-            </div>
-        </div>
-        <div id="footer-container">
-        </div>
-        <script>
-            $('#footer-container').load('includes/footer.html')
-        </script>
-        <script src="rainbow/dist/rainbow.min.js"></script>
-        <script src="rainbow/src/language/javascript.js"></script>
-        <script src="header-scoll.js"></script>
-    </body>
-</html>

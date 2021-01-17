@@ -2,6 +2,7 @@
     <div>
         <div>
             <a href="index.html">
+                <i class="fa fa-star-o"></i>
                 <h1>Pretty Forms</h1>
             </a>
             <h3>Make your forms attractive</h3>
@@ -24,11 +25,29 @@
             </ul>
         </div>
     </div>
-    <div>
-        <a href="">Installation</a>
-        <a href="html-code.html">HTML</a>
-        <a href="css-code.html">CSS</a>
-        <a href="javascript-code.html">JAVASCRIPT</a>
-        <a href=""></a>
+    <div class="non-sticky" id="pretty-forms-header">
+        <a href="installation.html">
+            <i class="fa fa-gear"></i>
+            SetUp
+        </a> | 
+        <a href="html-code.html">HTML</a> | 
+        <a href="css-code.html">CSS</a> | 
+        <a href="javascript-code.html">JS</a> | 
+        <a href="help.html">
+            <i class="fa fa-question-circle-o"></i>
+            Help
+        </a>
     </div>
 </header>
+
+<label id="back-to-top">
+    <div>
+        <i class="fa fa-arrow-up"></i>
+    </div>
+</label>
+<script>
+	$('#back-to-top').click(() => {
+		
+        window.scrollTo(0,0)
+	})
+</script>

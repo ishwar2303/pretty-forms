@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Help</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="assets/css/form.css">
+        <link rel="stylesheet" href="assets/css/header.css">
+        <link rel="stylesheet" href="assets/css/footer.css">
+        <link rel="stylesheet" href="assets/css/code-wrap.css">
+        <link rel="stylesheet" type="text/css" href="rainbow/themes/css/github.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <div id="header-container">
+    </div>
+    <script>
+        $('#header-container').load('includes/header.html')
+    </script>	
+	<div class="wrapper">
+        <div class="overlay-for-load">
+            <div>
+                <h1>Pretty Forms</h1>
+                <h3>Preparing...</h3>
+                <i class="fa fa-refresh fa-spin"></i>
+            </div>
+        </div>
+        <script>
+            setTimeout(() => {
+                document.getElementsByClassName('overlay-for-load')[0].style.display = 'none'
+            }, 1500)
+        </script>
+        <div class="page-heading">
+            How does it work?
+        </div>
+        <div class="code-wrapper">
+            <h4>
+                <i class="fa fa-check"></i>
+                <span>.set-row</span>
+            </h4>
+            <h5>
+                <div>
+                <span>Make childrens flex in row</span>
+                </div>
+            </h5>
+            <pre>
+                <code data-language='html'>
+<div class="set-row">
+    <div class="child-box">Child 1</div>
+    <div class="child-box">Child 2</div>
+    <div class="child-box">Child 3</div>
+    <div class="child-box">Child 4</div>
+    <div class="child-box">Child 5</div>
+</div>
+
+<style>
+.set-row{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+.set-row > div{
+    margin-right:10px;
+}
+.set-row > div:last-child{
+    margin-right: 0;
+}
+@media screen and (max-width : 800px){
+    .form-container{
+        width: 100%;
+    }
+    .set-row{
+        display: flex;
+        flex-direction: column;
+    }
+    .set-row > div{
+        margin-right: 0;
+        margin-top: 10px;
+    }
+    .set-row > div:first-child{
+        margin-top: 0;
+    }
+}
+</style>
+                </code>
+            </pre>
+            <div class="code-wrapper-output">
+                <div class="msg">
+                    Note : If screen max-width is 800px then childs will wrap
+                </div>
+                <div class="set-row">
+                    <div class="child-box">Child 1</div>
+                    <div class="child-box">Child 2</div>
+                    <div class="child-box">Child 3</div>
+                    <div class="child-box">Child 4</div>
+                    <div class="child-box">Child 5</div>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="code-wrapper">
+            <h4>
+                <i class="fa fa-check"></i>
+                <span>.set-col</span>
+            </h4>
+            <h5>
+                <div>
+                <span>Make childrens flex in column</span>
+                </div>
+            </h5>
+            <pre>
+                <code data-language='html'>
+<div class="set-col">
+    <div class="child-box">Child 1</div>
+    <div class="child-box">Child 2</div>
+    <div class="child-box">Child 3</div>
+</div>
+
+<style>
+.set-col{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+</style>
+                </code>
+            </pre>
+            <div class="code-wrapper-output">
+                <div class="msg">
+                </div>
+                <div class="set-col">
+                    <div class="child-box">Child 1</div>
+                    <div class="child-box">Child 2</div>
+                    <div class="child-box">Child 3</div>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="code-wrapper">
+            <h4>
+                <i class="fa fa-check"></i>
+                <span>Normal input and textarea</span>
+            </h4>
+            <h5>
+                <div>
+                <span>Create normal input</span>
+                </div>
+            </h5>
+            <pre>
+                <code data-language='html'>
+<div class="set-col">
+    <div class="input-container">
+        <label class="input-label">Input label</label>
+        <input class="form-input-optional" type="text" name="" placeholder="placeholder" required>
+    </div>
+</div>
+
+<style>
+.input-container{
+    display: flex;
+    flex-direction: column;
+}
+.input-label{
+    margin-bottom: 5px;
+    color: #34495e;
+}
+.form-input-optional{
+    border : 0.5px solid #3498db;
+    padding: 10px 5px;
+    border-radius: 5px;
+    display: flex;
+    flex: 1;
+
+}
+.form-input-optional:focus{
+    outline: none;
+    box-shadow: 0px 0px 0px 3px rgb(52, 152, 219,0.5);
+}
+</style>
+                </code>
+            </pre>
+            <div class="code-wrapper-output">
+                <div class="msg">
+                    only for normal input with type="text", type="email", type="number", type="password" and textarea fields<br/>
+                    Note : type="radio", type="checkbox" or select dropdown has different layout for custom design<br/>
+                    class="form-input-optional" should be given when the input doesn't requires validation<br/>
+                    Threfore it has no response div associated with it you will understand it more clearly in next block
+                </div>
+                <div class="set-row">
+                    <div class="set-col">
+                        <div class="input-container">
+                            <label class="input-label">Input label</label>
+                            <input class="form-input-optional" type="text" name="" placeholder="placeholder" required>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="code-wrapper">
+            <h4>
+                <i class="fa fa-check"></i>
+                <span>Normal input</span>
+            </h4>
+            <h5>
+                <div>
+                <span>Create input with icon</span>
+                </div>
+            </h5>
+            <pre>
+                <code data-language='html'>
+<div class="set-col">
+    <div class="input-container">
+        <label class="input-label">E-mail</label>
+        <div class="input-wrap-for-icon">
+            <span>
+                <i class="fa fa-envelope"></i>
+            </span>
+            <input class="form-input" type="email" name="email" placeholder="E-mail" required>
+        </div>
+    </div>
+    <div class="form-input-response">
+    </div>
+</div>
+
+<style>
+.input-container{
+    display: flex;
+    flex-direction: column;
+}
+.input-label{
+    margin-bottom: 5px;
+    color: #34495e;
+}
+.form-input{
+    border : 0.5px solid #3498db;
+    padding: 10px 5px;
+    border-radius: 5px;
+    display: flex;
+    flex: 1;
+}
+.form-input:focus{
+    outline: none;
+    box-shadow: 0px 0px 0px 3px rgb(52, 152, 219,0.5);
+}
+.input-wrap-for-icon{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+.input-wrap-for-icon > span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    background: #ecf0f1;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    color: #7f8c8d;
+    font-size: 20px;
+    border-left: 0.5px solid #bdc3c7;
+    border-top: 0.5px solid #bdc3c7;
+    border-bottom: 0.5px solid #bdc3c7;
+}
+.input-wrap-for-icon > input{
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+</style>
+                </code>
+            </pre>
+            <div class="code-wrapper-output">
+                <div class="msg">
+                    class="form-input" will be used by script to validate any normal input and textarea field<br/>
+                    class="form-input-response" will be used to print the validation response<br/>
+                    <label>
+                        <i class="fa fa-caret-right"></i>
+                        <span>form-input -> required (associate a div with class="form-input-response")</span>
+                    </label>
+                    <label>
+                        <i class="fa fa-caret-right"></i>
+                        <span>form-input-optional -> not required (no response div associated)</span>
+                    </label>        
+                </div>
+                <div class="set-col">
+                    <div class="input-container">
+                        <label class="input-label">E-mail</label>
+                        <div class="input-wrap-for-icon">
+                            <span>
+                                <i class="fa fa-envelope"></i>
+                            </span>
+                            <input id="email-validate" class="form-input" type="email" name="email" placeholder="E-mail" required>
+                        </div>
+                    </div>
+                    <div id="email-validate-response" class="form-input-response">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+                    <div class="code-wrapper">
+                <h4>
+                    <i class="fa fa-check"></i>
+                    <span>Radio inputs</span>
+                </h4>
+                <h5>
+                    <div>
+                    <span>Create custom radio input with or without icon</span>
+                    </div>
+                </h5>
+                <pre>
+                    <code data-language='html'>
+<div class="set-row">
+    <div class="custom-radio-input-container set-col">
+        <label class="input-label">Gender</label>
+        <div class="radio-inputs">
+            <!-- radio start -->
+            <label>
+                <input type="radio" name="gender" value="male" required>
+                <span>
+                    <i class="fa fa-male"></i>
+                    Male
+                </span>
+            </label>
+            <!-- radio end -->
+            <label>
+                <input type="radio" name="gender" value="female" required>
+                <span>
+                    <i class="fa fa-female"></i>
+                    Female
+                </span>
+            </label>
+            <label>
+                <input type="radio" name="gender" value="others" required>
+                <span>Others</span>
+            </label>
+        </div>   
+        <div class="form-radio-and-checkbox-input-response">
+        </div>
+    </div>
+</div>
+
+<style>
+.radio-inputs{
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: -5px;
+}
+.radio-inputs > label{
+    margin-bottom: 10px;
+    margin-right: 10px;
+    height: 35px;
+}
+.radio-inputs > label > input{
+    display: none;
+    width: 0;  
+    height: 0;
+    opacity: 0;
+}
+.radio-inputs > label > span{
+    border: 0.5px solid #bdc3c7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 0px 10px;
+    border-radius: 5px;
+    font-weight: 400;
+}
+.radio-inputs > label > span > i{
+    margin-right: 7px;
+    color: #7f8c8d;
+}
+.radio-inputs > label > span:hover{
+    background: #d5e9f6;
+}
+.radio-inputs > label > input:checked ~ span{
+    box-shadow: 0px 0px 0px 3px rgb(46, 204, 113, 0.4);
+    border : 0.5px solid rgb(46, 204, 113);
+}
+</style>
+                    </code>
+                </pre>
+                <div class="code-wrapper-output">
+                    <div class="msg">
+                        If you want these radio to be required just add the name attribute value to script
+                        here name="gender"  so put 'gender' in array
+                    </div>
+                    <div class="set-row">
+                        <div class="custom-radio-input-container set-col">
+                            <label class="input-label">Gender</label>
+                            <div class="radio-inputs">
+                                <label>
+                                    <input type="radio" name="gender" value="male" required>
+                                    <span>
+                                        <i class="fa fa-male"></i>
+                                        Male
+                                    </span>
+                                </label>
+                                <label>
+                                    <input type="radio" name="gender" value="female" required>
+                                    <span>
+                                        <i class="fa fa-female"></i>
+                                        Female
+                                    </span>
+                                </label>
+                                <label>
+                                    <input type="radio" name="gender" value="others" required>
+                                    <span>Others</span>
+                                </label>
+                            </div>   
+                            <div class="form-radio-and-checkbox-input-response">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        
+        <div class="code-wrapper">
+            <h4>
+                <i class="fa fa-check"></i>
+                <span>Checkbox inputs</span>
+            </h4>
+            <h5>
+                <div>
+                <span>Create custom checkbox input with or without icon</span>
+                </div>
+            </h5>
+            <pre>
+                <code data-language='html'>
+<div class="set-row">
+    <div class="set-col">
+        <label class="input-label">Internship</label>
+        <div class="checkbox-container">
+            <label>
+                <span class="checkbox-icon-container">
+                    <i class="fa fa-google"></i>
+                </span>
+                <span class="checkbox-label">
+                    Google
+                </span>
+                <span class="checkbox-input-container">
+                    <input type="checkbox" name="company[]" value="google">
+                </span>
+            </label>
+            <label class="no-icon-attached">
+                <span class="checkbox-label">
+                    Others
+                </span>
+                <span class="checkbox-input-container">
+                    <input type="checkbox" name="company[]" value="others">
+                </span>
+            </label>
+        </div>
+        <div class="form-radio-and-checkbox-input-response">
+        </div>
+    </div>
+</div>
+
+<style>
+.checkbox-container{
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: -5px;
+}
+.checkbox-container > label{
+    border-radius: 5px;
+    display: flex;
+    height: 35px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+.checkbox-container > label:hover{
+    
+    background: #d5e9f6;
+}
+.checkbox-icon-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    background: #ecf0f1;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    color: #7f8c8d;
+    font-size: 20px;
+    border-left: 0.5px solid #bdc3c7;
+    border-top: 0.5px solid #bdc3c7;
+    border-bottom: 0.5px solid #bdc3c7;
+}
+.checkbox-label{
+    border-top : 0.5px solid #bdc3c7;
+    border-bottom:  0.5px solid #bdc3c7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 5px;
+    font-weight: 400;
+}
+.checkbox-input-container{
+    display: flex;
+    align-items: flex-end;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    border-top : 0.5px solid #bdc3c7;
+    border-bottom:  0.5px solid #bdc3c7;
+    border-right: 0.5px solid #bdc3c7;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.no-icon-attached > .checkbox-label{
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    border-left: 0.5px solid #bdc3c7;
+}    
+</style>
+                </code>
+            </pre>
+            <div class="code-wrapper-output">
+                <div class="msg">
+                    If you want these radio to be required just add the name attribute value to script
+                    here name="company[]"  so put 'company[]' in array
+                </div>
+                <div class="set-row">
+                    <div class="set-col">
+                        <label class="input-label">Internship</label>
+                        <div class="checkbox-container">
+                            <label>
+                                <span class="checkbox-icon-container">
+                                    <i class="fa fa-google"></i>
+                                </span>
+                                <span class="checkbox-label">
+                                    Google
+                                </span>
+                                <span class="checkbox-input-container">
+                                    <input type="checkbox" name="company[]" value="google">
+                                </span>
+                            </label>
+                            <label class="no-icon-attached">
+                                <span class="checkbox-label">
+                                    Others
+                                </span>
+                                <span class="checkbox-input-container">
+                                    <input type="checkbox" name="company[]" value="others">
+                                </span>
+                            </label>
+                        </div>
+                        <div class="form-radio-and-checkbox-input-response">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="code-wrapper">
+            <h4>
+                <i class="fa fa-check"></i>
+                <span>Select dropdown</span>
+            </h4>
+            <h5>
+                <div>
+                <span>Create custom select dropdown with or without icon</span>
+                </div>
+            </h5>
+            <pre>
+                <code data-language='html'>
+<div class="set-row">
+    <div class="set-col">
+        <div class="input-container">
+            <label class="input-label">Programming Language</label>
+            <div class="input-wrap-for-icon">
+                <span>
+                    <i class="fa fa-laptop"></i>
+                </span>
+                <select class="select-input" name="language">
+                    <option value="0" selected>Choose</option>
+                    <option value="c++">C++</option>
+                    <option value="java">JAVA </option>
+                    <option value="node JS">node JS </option>
+                    <option value="python">Python</option>
+                    <option value="php">PHP</option>
+                </select>
+            </div>
+        </div>    
+        <div class="form-select-input-response">
+        </div>
+    </div>
+    <div class="set-col">
+        <div class="input-container">
+            <label class="input-label">Database</label>
+            <select class="select-input" name="database">
+                <option value="0" selected>Choose</option>
+                <option value="MongoDB">MongoDB</option>
+                <option value="MySQL">MySQL</option>
+                <option value="MariaDB">MariaDB</option>
+                <option value="Amazon Aurora">Amazon Aurora</option>
+                <option value="Amazon DynamoDB">Amazon DynamoDB</option>
+            </select>
+        </div>    
+        <div class="form-select-input-response">
+        </div>
+    </div>
+</div>
+
+<style>
+.input-container{
+    display: flex;
+    flex-direction: column;
+}
+.input-label{
+    margin-bottom: 5px;
+    color: #34495e;
+}
+form select{
+    border : 0.5px solid #bdc3c7;
+}
+.input-container > select{
+    width: 100%;
+    padding: 10px 5px;
+    border-radius: 5px;
+}
+.input-container > select:focus{
+    outline: none;
+}
+.input-wrap-for-icon > input{
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+.input-wrap-for-icon > select{
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    width: 100%;
+    padding: 10px 5px;
+    border-radius: 5px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+.input-wrap-for-icon > select:focus{
+    outline: none;
+}
+</style>
+                </code>
+            </pre>
+            <div class="code-wrapper-output">
+                <div class="msg">
+                    If you want the select dropdown to be required just add the name attribute value to script
+                    here name="language"  so put 'language' in array
+                    <label >
+                        <i class="fa fa-caret-right"></i>
+                        <span>class="form-select-input-response" is used to print validation response</span>
+                    </label>
+                </div>
+                <div class="set-row">
+                    <div class="set-col">
+                        <div class="input-container">
+                            <label class="input-label">Programming Language</label>
+                            <div class="input-wrap-for-icon">
+                                <span>
+                                    <i class="fa fa-laptop"></i>
+                                </span>
+                                <select class="select-input" name="language">
+                                    <option value="0" selected>Choose</option>
+                                    <option value="c++">C++</option>
+                                    <option value="java">JAVA </option>
+                                    <option value="node JS">node JS </option>
+                                    <option value="python">Python</option>
+                                    <option value="php">PHP</option>
+                                </select>
+                            </div>
+                        </div>    
+                        <div class="form-select-input-response">
+                        </div>
+                    </div>
+                    <div class="set-col">
+                        <div class="input-container">
+                            <label class="input-label">Database</label>
+                            <select class="select-input" name="database">
+                                <option value="0" selected>Choose</option>
+                                <option value="MongoDB">MongoDB</option>
+                                <option value="MySQL">MySQL</option>
+                                <option value="MariaDB">MariaDB</option>
+                                <option value="Amazon Aurora">Amazon Aurora</option>
+                                <option value="Amazon DynamoDB">Amazon DynamoDB</option>
+                            </select>
+                        </div>    
+                        <div class="form-select-input-response">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    
+    <div id="footer-container">
+    </div>
+    <script>
+        $('#footer-container').load('includes/footer.html')
+    </script>
+    <script src="rainbow/dist/rainbow.min.js"></script>
+    <script src="rainbow/src/language/javascript.js"></script>
+    <script src="rainbow/src/language/html.js"></script>
+    <script src="rainbow/src/language/css.js"></script>
+    <script src="header-scoll.js"></script>
+</body>
+</html>

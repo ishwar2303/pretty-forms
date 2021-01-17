@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Installation</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="assets/css/form.css">
+        <link rel="stylesheet" href="assets/css/header.css">
+        <link rel="stylesheet" href="assets/css/footer.css">
+        <link rel="stylesheet" href="assets/css/code-wrap.css">
+        <link rel="stylesheet" type="text/css" href="rainbow/themes/css/github.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <div id="header-container">
+    </div>
+    <script>
+        $('#header-container').load('includes/header.html')
+    </script>	
+	<div class="wrapper">
+        <div class="overlay-for-load">
+            <div>
+                <h1>Pretty Forms</h1>
+                <h3>Preparing...</h3>
+                <i class="fa fa-refresh fa-spin"></i>
+            </div>
+        </div>
+        <script>
+            setTimeout(() => {
+                document.getElementsByClassName('overlay-for-load')[0].style.display = 'none'
+            }, 1500)
+        </script>
+        <div class="page-heading">
+            Let's Get Started
+        </div>
+        <div class="code-wrapper">
+            <h4>
+                <i class="fa fa-dot-circle-o"></i>
+                <span>Folder</span>
+            </h4>
+            <h5>
+                <div>
+                <span>Include the asset folder to your root directory of the project</span>
+                </div>
+            </h5>
+            <pre>
+                <code data-language='html'>
+Folder Name : pretty-forms-assets
+                </code>
+            </pre>
+        </div>
+
+
+		<div class="code-wrapper">
+            <h4>
+                <i class="fa fa-dot-circle-o"></i>
+                <span>HTML</span>
+            </h4>
+            <h5>
+                <div>
+                <span>Copy form HTML code to your project</span>
+                <div class="copy-btn-container">
+                    <button class="copy-to-clipboard-btn" id="html-code-copy-btn" onclick="copyToClipboard('ishwar')">
+                        <i class="fa fa-copy"></i>
+                    <span>Copy</span>
+                    </button>
+                    <label class="copy-to-clipboard-message" id="html-code-copied-msg">
+                        Copied to clipboard
+                    </label>
+                    <script>
+                        document.getElementById('html-code-copy-btn').addEventListener('click', ()=>{
+                            copyHTMLToClipboard('')
+                        })
+                    </script>
+                </div>
+                <script>
+                    const copyHTMLToClipboard = str => {
+                        let msg = document.getElementById('html-code-copied-msg')
+                        const el = document.createElement('textarea');
+                        str = document.getElementById('html-code-to-copy').innerHTML
+                        el.value = str;
+                        document.body.appendChild(el);
+                        el.select();
+                        document.execCommand('copy');
+                        document.body.removeChild(el);
+                        msg.style.display='block'
+                        setTimeout(()=>{ msg.style.display='none'},2000)
+                };
+                </script>
+                </div>
+            </h5>
+			<pre>
+				<code data-language='html'>
+See Help section to understand code structure
+				</code>
+			</pre>
+		</div>
+
+
+		<div class="code-wrapper">
+            <h4>
+                <i class="fa fa-dot-circle-o"></i>
+                <span>CSS</span>
+            </h4>
+            <h5>
+                <div>
+                    <span>Include this link to apply form css to your project</span>
+                    <div class="copy-btn-container">
+                        <button class="copy-to-clipboard-btn" id="css-link-copy-btn" onclick="copyToClipboard('ishwar')">
+                            <i class="fa fa-copy"></i>
+                        <span>Copy</span>
+                        </button>
+                        <label class="copy-to-clipboard-message" id="css-link-copied-msg">
+                            Copied to clipboard
+                        </label>
+                        <script>
+                            document.getElementById('css-link-copy-btn').addEventListener('click', ()=>{
+                                copyCssToClipboard('<link rel="stylesheet" type="text/css" href="pretty-forms-assets/css/form.css">')
+                            })
+                        </script>
+                    </div>
+                    <script>
+                        const copyCssToClipboard = str => {
+                            let msg = document.getElementById('css-link-copied-msg')
+                            const el = document.createElement('textarea');
+                            el.value = str;
+                            document.body.appendChild(el);
+                            el.select();
+                            document.execCommand('copy');
+                            document.body.removeChild(el);
+                            msg.style.display='block'
+                            setTimeout(()=>{ msg.style.display='none'},2000)
+                    };
+                    </script>
+                </div>
+            </h5>
+			<pre>
+				<code data-language='html'>
+<link rel="stylesheet" type="text/css" href="pretty-forms-assets/css/form.css">	
+				</code>
+			</pre>
+		</div>
+
+        <div class="code-wrapper">
+            <h4>
+                <i class="fa fa-dot-circle-o"></i>
+                <span>JavaScript</span>
+            </h4>
+            <h5>
+                <div>
+                <span>Include this script in the end of the body tag to apply form validation to your project</span>
+                <div class="copy-btn-container">
+                    <button class="copy-to-clipboard-btn" id="script-link-copy-btn" onclick="copyToClipboard('ishwar')">
+                        <i class="fa fa-copy"></i>
+                    <span>Copy</span>
+                    </button>
+                    <label class="copy-to-clipboard-message" id="script-link-copied-msg">
+                        Copied to clipboard
+                    </label>
+                    <script>
+                        document.getElementById('script-link-copy-btn').addEventListener('click', ()=>{
+                            copyScriptToClipboard('<script type="text/javascript" src="pretty-forms-assests/js/form.js"><\/script>')
+                        })
+                    </script>
+                </div>
+                <script>
+                    const copyScriptToClipboard = str => {
+                        let msg = document.getElementById('script-link-copied-msg')
+                        const el = document.createElement('textarea');
+                        el.value = str;
+                        document.body.appendChild(el);
+                        el.select();
+                        document.execCommand('copy');
+                        document.body.removeChild(el);
+                        msg.style.display='block'
+                        setTimeout(()=>{ msg.style.display='none'},2000)
+                };
+                </script>
+                </div>
+            </h5>
+            <pre>
+                <code data-language='html'>
+<script type="text/javascript" src="pretty-forms-assests/js/form.js"></script> 
+                </code>
+            </pre>
+        </div>
+	</div>
+    <div id="footer-container">
+    </div>
+    <script>
+        $('#footer-container').load('includes/footer.html')
+    </script>
+    <script src="rainbow/dist/rainbow.min.js"></script>
+    <script src="rainbow/src/language/javascript.js"></script>
+    <script src="rainbow/src/language/html.js"></script>
+    <script src="rainbow/src/language/css.js"></script>
+    <script src="header-scoll.js"></script>
+
+    <div id="html-code-to-copy">
+        <div class="form-container">
+            <h5 class="form-header">
+                <label>Form Heading</label>
+            </h5>
+            <form action="" method="POST" id="validate-form" class="form-layout" novalidate="">
+                <div class="set-row">
+                    <div class="set-col">
+                        <div class="input-container">
+                            <label class="input-label">First Name</label>
+                            <div class="input-wrap-for-icon">
+                                <span>
+                                    <i class="fa fa-user"></i>
+                                </span>
+                                <input class="form-input" type="text" name="firstName" placeholder="First Name" required="">
+                            </div>
+                        </div>
+                        <div class="form-input-response">
+                        </div>
+                    </div>
+                    <div class="set-col">
+                        <div class="input-container">
+                            <label class="input-label">Last Name</label>
+                            <input class="form-input-optional" type="text" name="lastName" placeholder="Last Name" required="">
+                        </div>
+                    </div>
+                </div>
+                <div class="set-row">
+                    <div class="set-col">
+                        <div class="input-container">
+                            <label class="input-label">E-mail</label>
+                            <div class="input-wrap-for-icon">
+                                <span>
+                                    <i class="fa fa-envelope"></i>
+                                </span>
+                                <input id="email-validate" class="form-input" type="email" name="email" placeholder="E-mail" required="">
+                            </div>
+                        </div>
+                        <div id="email-validate-response" class="form-input-response">
+                        </div>
+                    </div>
+                    <div class="set-col">
+                        <div class="input-container">
+                            <label class="input-label">Contact</label>
+                            <div class="input-wrap-for-icon">
+                                <span>
+                                    <i class="fa fa-phone"></i>
+                                </span>
+                                <input class="form-input" type="number" name="contact" placeholder="Contact" required="">
+                            </div>
+                        </div>
+                        <div class="form-input-response">
+                        </div>
+                    </div>
+                </div>
+                <div class="set-row">
+                    <div class="custom-radio-input-container set-col">
+                        <label class="input-label">Gender</label>
+                        <div class="radio-inputs">
+                            <label>
+                                <input type="radio" name="gender" value="male" required="">
+                                <span>
+                                    <i class="fa fa-male"></i>
+                                    Male
+                                </span>
+                            </label>
+                            <label>
+                                <input type="radio" name="gender" value="female" required="">
+                                <span>
+                                    <i class="fa fa-female"></i>
+                                    Female
+                                </span>
+                            </label>
+                            <label>
+                                <input type="radio" name="gender" value="others" required="">
+                                <span>Others</span>
+                            </label>
+                        </div>   
+                        <div class="form-radio-and-checkbox-input-response">
+                        </div>
+                    </div>
+                </div>
+                <div class="set-row">
+                    <div class="set-col">
+                        <div class="input-container">
+                            <label class="input-label">Programming Language</label>
+                            <div class="input-wrap-for-icon">
+                                <span>
+                                    <i class="fa fa-laptop"></i>
+                                </span>
+                                <select class="select-input" name="language">
+                                    <option value="0" selected="">Choose</option>
+                                    <option value="c++">C++</option>
+                                    <option value="java">JAVA </option>
+                                    <option value="node JS">node JS </option>
+                                    <option value="python">Python</option>
+                                    <option value="php">PHP</option>
+                                </select>
+                            </div>
+                        </div>    
+                        <div class="form-select-input-response">
+                        </div>
+                    </div>
+                    <div class="set-col">
+                        <div class="input-container">
+                            <label class="input-label">Database</label>
+                            <select class="select-input" name="database">
+                                <option value="0" selected="">Choose</option>
+                                <option value="MongoDB">MongoDB</option>
+                                <option value="MySQL">MySQL</option>
+                                <option value="MariaDB">MariaDB</option>
+                                <option value="Amazon Aurora">Amazon Aurora</option>
+                                <option value="Amazon DynamoDB">Amazon DynamoDB</option>
+                            </select>
+                        </div>    
+                        <div class="form-select-input-response">
+                        </div>
+                    </div>
+                </div>
+                <div class="set-row">
+                    <div class="set-col">
+                        <label class="input-label">Internship</label>
+                        <div class="checkbox-container">
+                            <label>
+                                <span class="checkbox-icon-container">
+                                    <i class="fa fa-google"></i>
+                                </span>
+                                <span class="checkbox-label">
+                                    Google
+                                </span>
+                                <span class="checkbox-input-container">
+                                    <input type="checkbox" name="company[]" value="google">
+                                </span>
+                            </label>
+                            <label>
+                                <span class="checkbox-icon-container">
+                                    <i class="fa fa-facebook"></i>
+                                </span>
+                                <span class="checkbox-label">
+                                    Facebook
+                                </span>
+                                <span class="checkbox-input-container">
+                                    <input type="checkbox" name="company[]" value="facebook">
+                                </span>
+                            </label>
+                            <label>
+                                <span class="checkbox-icon-container">
+                                    <i class="fa fa-twitter"></i>
+                                </span>
+                                <span class="checkbox-label">
+                                    Twitter
+                                </span>
+                                <span class="checkbox-input-container">
+                                    <input type="checkbox" name="company[]" value="twitter">
+                                </span>
+                            </label>
+                            <label class="no-icon-attached">
+                                <span class="checkbox-label">
+                                    Others
+                                </span>
+                                <span class="checkbox-input-container">
+                                    <input type="checkbox" name="company[]" value="others">
+                                </span>
+                            </label>
+                        </div>
+                        <div class="form-radio-and-checkbox-input-response">
+                        </div>
+                    </div>
+                </div>
+                <div class="set-row">
+                    <div class="set-col">
+                        <div class="input-container">
+                            <label class="input-label">Address</label>
+                            <textarea class="form-input" rows="6" name="address"></textarea>
+                        </div>
+                        <div class="form-input-response">
+                        </div>
+                    </div>
+                </div>
+                <div class="set-row">
+                    <div class="set-col">
+                        <div class="input-container">
+                            <label class="input-label">Password</label>
+                            <div class="input-wrap-for-icon">
+                                <span>
+                                    <i class="fa fa-key"></i>
+                                </span>
+                                <input id="password" class="form-input" type="password" name="password" placeholder="Password" required="">
+                                <i id="password-show-eye-icon" class="fa fa-eye"></i>
+                                <i id="password-hide-eye-icon" class="fa fa-eye-slash"></i>
+                            </div>
+                        </div>
+                        <div id="password-validate-response" class="form-input-response">
+                        </div>
+                    </div>
+                    <div class="set-col">
+                        <div class="input-container">
+                            <label class="input-label">Confirm Password</label>
+                            <div class="input-wrap-for-icon">
+                                <span>
+                                    <i class="fa fa-key"></i>
+                                </span>
+                                <input id="conf-password" class="form-input" type="password" name="confPassword" placeholder="Confirm Password" required="">
+                                <i id="password-match-icon" class="fa fa-check"></i> <!-- Password match -->
+                                <i id="password-not-match-icon" class="fa fa-close"></i> <!-- Password not match -->
+                            </div>
+                        </div>
+                        <div class="form-input-response">
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="set-row">
+                    <div class="set-col">
+                        <div class="simple-checkbox-container">
+                            <input id="agree-checkbox" type="checkbox" name="agree" required="">
+                            <label>Agree to terms and conditions</label>
+                        </div>
+                        <div id="agree-response">
+                            You must agree before submitting.
+                        </div>
+                    </div>
+                </div>
+                <div class="submit-btn-wrapper">
+                    <button id="submit-btn">Submit</button>
+                </div>
+            </form>
+            <div class="form-footer"></div>
+        </div>
+    </div>
+</body>
+</html>

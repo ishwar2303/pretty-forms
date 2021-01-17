@@ -1,19 +1,49 @@
-let radioAndCheckboxInputCategory = ['gender', 'company[]'] 
-let selectInputCategory = ['language', 'database'] 
+/*
+Setup
+Normal form inputs with type = text,email,password and textarea fields are accessed using class="form-input" for validation (see line: 35)
+So only those inputs should have form-input class
+and a form-input-response class div assoicated to print the response (see line: 16)
+Radio inputs,checkbox & select dropdown are accessed using value of the name attribute (see line: 37,38)
+add your name attribute value to the arrays below
+*/
+let radioAndCheckboxInputCategory = ['gender', 'company[]'] // radio and checkbox name="this-part" from your html
+let selectInputCategory = ['language', 'database'] // same for select name="this-part"
+
+// keep the order maintain for example if you have gender first and than company[]
+// then see (line no: 25) response is for gender first than companies
+
+// Messages to show on form validation
+let formInputResponseMessages = [
+                                 'First Name required',
+                                 'E-mail required',
+                                 'Contact required',
+                                 'Address required', 
+                                 'Password required', 
+                                 'Confirm password required', 
+                                 'Address required'
+                                ] 
+let formRadioAndCheckboxResponseMessages = [
+                                            'Gender required', 
+                                            'Companies required'
+                                        ]
+let formSelectInputResponseMessages = [
+                                        'Language required', 
+                                        'Database required'
+                                    ]
+
+
 let formInput = document.getElementsByClassName('form-input') 
-let formSelectInput = document.getElementsByClassName('select-input')
-let formInputResponse = document.getElementsByClassName('form-input-response')
-let formInputResponseMessages = ['First Name required', 'E-mail required', 'Contact required', 'Address required', 'Password required', 'Confirm password required', 'Address required'] 
-let formRadioInputResponse = document.getElementsByClassName('form-radio-input-response')
-let formRadioAndCheckboxResponseMessages = ['Gender required', 'Companies required']
-let formSelectInputResponse = document.getElementsByClassName('form-select-input-response')
-let formSelectInputResponseMessages = ['Language required', 'Database required']
+let formInputResponse = document.getElementsByClassName('form-input-response') // accessing response area for normal inputs and textarea
+let formRadioAndCheckboxResponse = document.getElementsByClassName('form-radio-and-checkbox-input-response') // accessing response area for radio and checkbox
+let formSelectInputResponse = document.getElementsByClassName('form-select-input-response') // accessing response area for select dropdown
 
 // validating form
 function validateForm(form){
     let val
     let result = true
     let control
+
+    // validating normal inputs and textarea fields
     for(i=0; i<formInput.length; i++){
         val = formInput[i].value.trim()
         if(val == ''){
@@ -28,6 +58,8 @@ function validateForm(form){
             formInput[i].className = 'form-input input-valid-success'
         }
     }
+
+    // validating radio and checkbox type inputs
     for(i=0; i<radioAndCheckboxInputCategory.length; i++ ){
         let radioInputs = document.getElementsByName(radioAndCheckboxInputCategory[i])
         control = 0
@@ -38,45 +70,40 @@ function validateForm(form){
             }
         }
         if(!control){
-            formRadioInputResponse[i].className += ' valid-error'
-            formRadioInputResponse[i].style.display = 'block'
-            formRadioInputResponse[i].innerHTML = formRadioAndCheckboxResponseMessages[i]
+            formRadioAndCheckboxResponse[i].className += ' valid-error'
+            formRadioAndCheckboxResponse[i].style.display = 'block'
+            formRadioAndCheckboxResponse[i].innerHTML = formRadioAndCheckboxResponseMessages[i]
             result = false
         }
         else{
-            formRadioInputResponse[i].style.display = 'none'
+            formRadioAndCheckboxResponse[i].style.display = 'none'
         }
     }
+
+    // validating select dropdown type inputs
     for(i=0; i<selectInputCategory.length; i++){
         let selectInputs = document.getElementsByName(selectInputCategory[i])[0]
         if(selectInputs.value == '0'){
             formSelectInputResponse[i].className += ' valid-error'
             formSelectInputResponse[i].style.display = 'block'
             formSelectInputResponse[i].innerHTML = formSelectInputResponseMessages[i]
-            formSelectInput[i].className = 'select-input input-valid-error'
+            selectInputs.className = 'select-input input-valid-error'
             result = false
         }
         else{
             formSelectInputResponse[i].style.display = 'none'
-            formSelectInput[i].className = 'select-input input-valid-success'
+            selectInputs.className = 'select-input input-valid-success'
         }
     }
+    // add more middleware here...
+    // Create your function call it here and return the true or false value to result
     result = emailValidation()
     result = passwordValidation()
     result = checkPasswordMatch()
-    let agreeCheckbox = document.getElementById('agree-checkbox')
-    let agreeResponse = document.getElementById('agree-response')
-    if(!agreeCheckbox.checked){
-        agreeResponse.className = 'agree-response valid-error'
-        agreeResponse.style.display = 'block'
-        result = false
-    }
-    else{
-        agreeResponse.style.display = 'none'
-    }
-
+    result = agreeToPolicy()
     return result
 }
+
 function formSetUp(){
     let form = document.getElementById('validate-form')
     form.addEventListener('submit', (event) => {
@@ -86,7 +113,6 @@ function formSetUp(){
         if(result)
             form.submit()
     })
-    let formInput = form.getElementsByClassName('form-input')
     for(i=0; i<formInput.length; i++){
         formInput[i].addEventListener('input', validateForm)
     }
@@ -103,8 +129,15 @@ function formSetUp(){
     }
     document.getElementById('agree-checkbox').addEventListener('click', validateForm)
 }
-let passwordInput = document.getElementById('password')
-let confPasswordInput = document.getElementById('conf-password')
+
+window.onload = function(){
+    formSetUp()
+}
+// check password match
+let passwordID = 'password'
+let confPasswordID = 'conf-password'
+let passwordInput = document.getElementById(passwordID)
+let confPasswordInput = document.getElementById(confPasswordID)
 function checkPasswordMatch(){
     let password = passwordInput.value
     let confPassword = confPasswordInput.value
@@ -131,8 +164,11 @@ function checkPasswordMatch(){
 passwordInput.addEventListener('click', checkPasswordMatch)
 confPasswordInput.addEventListener('click', checkPasswordMatch)
 
-let showEyeIcon = document.getElementById('password-show-eye-icon')
-let hideEyeIcon = document.getElementById('password-hide-eye-icon')
+// toggle password visibility
+let showEyeIconID = 'password-show-eye-icon'
+let hideEyeIconID = 'password-hide-eye-icon'
+let showEyeIcon = document.getElementById(showEyeIconID)
+let hideEyeIcon = document.getElementById(hideEyeIconID)
 function makePasswordVisible(){
     let passwordInput = document.getElementById('password')
     if(passwordInput.type == 'password'){
@@ -177,6 +213,8 @@ function emailValidation(){
     }
     else return false
 }
+
+//Password validation
 function passwordValidation(){
     let passwordID = 'password'
     let passwordValidateResponseID = 'password-validate-response'
@@ -213,3 +251,17 @@ function passwordValidation(){
     else return false
 }
 
+
+function agreeToPolicy(){
+    let agreeCheckbox = document.getElementById('agree-checkbox')
+    let agreeResponse = document.getElementById('agree-response')
+    if(!agreeCheckbox.checked){
+        agreeResponse.className = 'agree-response valid-error'
+        agreeResponse.style.display = 'block'
+        return false
+    }
+    else{
+        agreeResponse.style.display = 'none'
+        return true
+    }
+}

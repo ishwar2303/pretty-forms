@@ -1,29 +1,20 @@
 <html>
     <head>
-        <title>Custom Form</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="assets/css/form.css">
-        <link rel="stylesheet" href="assets/css/header.css">
-        <link rel="stylesheet" href="assets/css/footer.css">
-        <link rel="stylesheet" href="assets/css/code-wrap.css">
+        <title>Pretty Form</title>
+        <!-- form css -->
+        <link rel="stylesheet" type="text/css" href="../css/form.css">
+        <!-- icons -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     </head>
     <body>
-        <div id="header-container">
-        </div>
-        <script>
-            $('#header-container').load('includes/header.html')
-        </script>
         <div class="wrapper">
-            <div class="page-heading">
-                Try feeding...
-            </div>
+
+            <!-- form start -->
             <div class="form-container">
                 <h5 class="form-header">
-                    <label>FORM HEADING</label>
+                    <label>Form Heading</label>
                 </h5>
-                <form action="" method="POST" id="validate-form" class="form-layout" novalidate>
+                <form action="" method="POST" id="validate-form" class="form-layout" novalidate="">
                     <div class="set-row">
                         <div class="set-col">
                             <div class="input-container">
@@ -32,7 +23,7 @@
                                     <span>
                                         <i class="fa fa-user"></i>
                                     </span>
-                                    <input class="form-input" type="text" name="firstName" placeholder="First Name" required>
+                                    <input class="form-input" type="text" name="firstName" placeholder="First Name" required="">
                                 </div>
                             </div>
                             <div class="form-input-response">
@@ -41,7 +32,7 @@
                         <div class="set-col">
                             <div class="input-container">
                                 <label class="input-label">Last Name</label>
-                                <input class="form-input-optional" type="text" name="lastName" placeholder="Last Name" required>
+                                <input class="form-input-optional" type="text" name="lastName" placeholder="Last Name" required="">
                             </div>
                         </div>
                     </div>
@@ -53,7 +44,7 @@
                                     <span>
                                         <i class="fa fa-envelope"></i>
                                     </span>
-                                    <input id="email-validate" class="form-input" type="email" name="email" placeholder="E-mail" required>
+                                    <input id="email-validate" class="form-input" type="email" name="email" placeholder="E-mail" required="">
                                 </div>
                             </div>
                             <div id="email-validate-response" class="form-input-response">
@@ -66,7 +57,7 @@
                                     <span>
                                         <i class="fa fa-phone"></i>
                                     </span>
-                                    <input class="form-input" type="number" name="contact" placeholder="Contact" required>
+                                    <input class="form-input" type="number" name="contact" placeholder="Contact" required="">
                                 </div>
                             </div>
                             <div class="form-input-response">
@@ -78,21 +69,21 @@
                             <label class="input-label">Gender</label>
                             <div class="radio-inputs">
                                 <label>
-                                    <input type="radio" name="gender" value="male" required>
+                                    <input type="radio" name="gender" value="male" required="">
                                     <span>
                                         <i class="fa fa-male"></i>
                                         Male
                                     </span>
                                 </label>
                                 <label>
-                                    <input type="radio" name="gender" value="female" required>
+                                    <input type="radio" name="gender" value="female" required="">
                                     <span>
                                         <i class="fa fa-female"></i>
                                         Female
                                     </span>
                                 </label>
                                 <label>
-                                    <input type="radio" name="gender" value="others" required>
+                                    <input type="radio" name="gender" value="others" required="">
                                     <span>Others</span>
                                 </label>
                             </div>   
@@ -109,7 +100,7 @@
                                         <i class="fa fa-laptop"></i>
                                     </span>
                                     <select class="select-input" name="language">
-                                        <option value="0" selected>Choose</option>
+                                        <option value="0" selected="">Choose</option>
                                         <option value="c++">C++</option>
                                         <option value="java">JAVA </option>
                                         <option value="node JS">node JS </option>
@@ -125,7 +116,7 @@
                             <div class="input-container">
                                 <label class="input-label">Database</label>
                                 <select class="select-input" name="database">
-                                    <option value="0" selected>Choose</option>
+                                    <option value="0" selected="">Choose</option>
                                     <option value="MongoDB">MongoDB</option>
                                     <option value="MySQL">MySQL</option>
                                     <option value="MariaDB">MariaDB</option>
@@ -205,7 +196,7 @@
                                     <span>
                                         <i class="fa fa-key"></i>
                                     </span>
-                                    <input id="password" class="form-input" type="password" name="password" placeholder="Password" required>
+                                    <input id="password" class="form-input" type="password" name="password" placeholder="Password" required="">
                                     <i id="password-show-eye-icon" class="fa fa-eye"></i>
                                     <i id="password-hide-eye-icon" class="fa fa-eye-slash"></i>
                                 </div>
@@ -220,7 +211,7 @@
                                     <span>
                                         <i class="fa fa-key"></i>
                                     </span>
-                                    <input id="conf-password" class="form-input" type="password" name="confPassword" placeholder="Confirm Password" required>
+                                    <input id="conf-password" class="form-input" type="password" name="confPassword" placeholder="Confirm Password" required="">
                                     <i id="password-match-icon" class="fa fa-check"></i> <!-- Password match -->
                                     <i id="password-not-match-icon" class="fa fa-close"></i> <!-- Password not match -->
                                 </div>
@@ -229,11 +220,11 @@
                             </div>
                         </div>
                     </div>
-
+            
                     <div class="set-row">
                         <div class="set-col">
                             <div class="simple-checkbox-container">
-                                <input id="agree-checkbox" type="checkbox" name="agree" required>
+                                <input id="agree-checkbox" type="checkbox" name="agree" required="">
                                 <label>Agree to terms and conditions</label>
                             </div>
                             <div id="agree-response">
@@ -246,14 +237,12 @@
                     </div>
                 </form>
                 <div class="form-footer"></div>
-            </div>
+            </div>    
+            
+            <!-- form end -->
+            
         </div>
-        <div id="footer-container">
-        </div>
-        <script>
-            $('#footer-container').load('includes/footer.html')
-        </script>
-        <script src="assets/js/form.js"></script>
-        <script src="header-scoll.js"></script>
+        <!-- form validation script -->
+        <script type="text/javascript" src="../js/form.js"></script>
     </body>
 </html>
