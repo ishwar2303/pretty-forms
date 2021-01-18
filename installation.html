@@ -46,6 +46,7 @@
             </h5>
             <pre>
                 <code data-language='html'>
+Download from GitHub
 Folder Name : pretty-forms-assets
                 </code>
             </pre>
@@ -160,7 +161,7 @@ See Help section to understand code structure
                     </label>
                     <script>
                         document.getElementById('script-link-copy-btn').addEventListener('click', ()=>{
-                            copyScriptToClipboard('<script type="text/javascript" src="pretty-forms-assests/js/form.js"><\/script>')
+                            copyScriptToClipboard('<script type="text/javascript" src="pretty-forms-assets/js/form.js"><\/script>')
                         })
                     </script>
                 </div>
@@ -181,7 +182,7 @@ See Help section to understand code structure
             </h5>
             <pre>
                 <code data-language='html'>
-<script type="text/javascript" src="pretty-forms-assests/js/form.js"></script> 
+<script type="text/javascript" src="pretty-forms-assets/js/form.js"></script> 
                 </code>
             </pre>
         </div>
@@ -427,5 +428,36 @@ See Help section to understand code structure
             <div class="form-footer"></div>
         </div>
     </div>
+    <div id="view-github-btn" class="view-in-github-btn">
+        <span id="show-hide-github-link">
+            <i id="left-caret" class="fa fa-angle-left" ></i>
+            <i id="right-caret" class="fa fa-angle-right"></i>
+        </span>
+        <a href="https://github.com/ishwar2303/pretty-forms">
+            <span>
+                <i class="fa fa-github"></i>
+            </span>
+            <label>View In GitHub</label>
+        </a>
+    </div>
 </body>
 </html>
+
+
+<script>
+    var control = 1
+    $('#show-hide-github-link').click(() => {
+        let btn = document.getElementById('view-github-btn')
+        if(control == 2){
+            btn.style.right = '0px'
+            control = 1
+        }
+        else{
+             btn.style.right = '-142px'
+            control = 2
+        }
+        $('#left-caret').toggle()
+        $('#right-caret').toggle()
+
+    })
+</script>

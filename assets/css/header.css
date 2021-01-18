@@ -151,3 +151,50 @@ height: 40px;
     width: 100%;
     height: 100%;
 }
+.view-in-github-btn{
+    height: 40px;
+    border-radius: 7px;
+    position: absolute;
+    right: 0px;
+    top: 250px;
+    background: rgba(50, 53, 50, 0.9);
+    display: flex;
+    color : white;
+    align-items: center;
+    border-top-right-radius: 0px;
+    position: fixed;
+    z-index: 1;
+    border-bottom-right-radius: 0px;
+}
+
+.view-in-github-btn > span{
+    padding-right: 0px;
+    border-right: 0.5px solid white;
+    width: 33px;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.view-in-github-btn > a{
+    display: flex;
+    cursor: pointer;
+    padding: 0px 5px;
+    align-items: center;
+    background: rgba(255,0,0,0.8);
+    color: white;
+    height: 100%;
+    padding: 0px 10px;
+}
+.view-in-github-btn > a > span{
+    margin-right: 5px;
+}
+.view-in-github-btn > a:hover{
+    color : white;
+
+    background: rgba(0,255,0,0.8);
+}
+#left-caret{
+    display: none;
+}
