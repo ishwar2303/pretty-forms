@@ -67,7 +67,7 @@ Folder Name : pretty-forms-assets
                     <span>Copy</span>
                     </button>
                     <label class="copy-to-clipboard-message" id="html-code-copied-msg">
-                        Copied to clipboard
+                        Copy to clipboard
                     </label>
                     <script>
                         document.getElementById('html-code-copy-btn').addEventListener('click', ()=>{
@@ -102,6 +102,50 @@ See Help section to understand code structure
 		<div class="code-wrapper">
             <h4>
                 <i class="fa fa-dot-circle-o"></i>
+                <span>Font Awesome</span>
+            </h4>
+            <h5>
+                <div>
+                    <span>Include this link to apply fa icons to your project</span>
+                    <div class="copy-btn-container">
+                        <button class="copy-to-clipboard-btn" id="font-awesome-link-copy-btn" onclick="copyToClipboard('ishwar')">
+                            <i class="fa fa-copy"></i>
+                        <span>Copy</span>
+                        </button>
+                        <label class="copy-to-clipboard-message" id="font-awesome-link-copied-msg">
+                            Copy to clipboard
+                        </label>
+                        <script>
+                            document.getElementById('font-awesome-link-copy-btn').addEventListener('click', ()=>{
+                                copyCssToClipboard('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">')
+                            })
+                        </script>
+                    </div>
+                    <script>
+                        const copyCssToClipboard = str => {
+                            let msg = document.getElementById('font-awesome-link-copied-msg')
+                            const el = document.createElement('textarea');
+                            el.value = str;
+                            document.body.appendChild(el);
+                            el.select();
+                            document.execCommand('copy');
+                            document.body.removeChild(el);
+                            msg.style.display='block'
+                            setTimeout(()=>{ msg.style.display='none'},2000)
+                    };
+                    </script>
+                </div>
+            </h5>
+			<pre>
+				<code data-language='html'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+				</code>
+			</pre>
+		</div>
+
+		<div class="code-wrapper">
+            <h4>
+                <i class="fa fa-dot-circle-o"></i>
                 <span>CSS</span>
             </h4>
             <h5>
@@ -113,7 +157,7 @@ See Help section to understand code structure
                         <span>Copy</span>
                         </button>
                         <label class="copy-to-clipboard-message" id="css-link-copied-msg">
-                            Copied to clipboard
+                            Copy to clipboard
                         </label>
                         <script>
                             document.getElementById('css-link-copy-btn').addEventListener('click', ()=>{
@@ -157,7 +201,7 @@ See Help section to understand code structure
                     <span>Copy</span>
                     </button>
                     <label class="copy-to-clipboard-message" id="script-link-copied-msg">
-                        Copied to clipboard
+                        Copy to clipboard
                     </label>
                     <script>
                         document.getElementById('script-link-copy-btn').addEventListener('click', ()=>{
@@ -433,7 +477,7 @@ See Help section to understand code structure
             <i id="left-caret" class="fa fa-angle-left" ></i>
             <i id="right-caret" class="fa fa-angle-right"></i>
         </span>
-        <a href="https://github.com/ishwar2303/pretty-forms">
+        <a href="https://github.com/ishwar2303/pretty-forms" target="_blank">
             <span>
                 <i class="fa fa-github"></i>
             </span>
